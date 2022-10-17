@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="James Sadler">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
+        <script src="Scripts/DarkMode.js"></script>
+        <script src="Scripts/PlotSwitch.js" defer></script>
+        <title>Web Interactivity Tutorials</title>
+    </head>
+    <body style="background-color: white;">
+        <nav>
+            <ul>
+                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/Moon-clipart-outline-free-images.png" onclick="dark_mode()" title="Dark mode"></li>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><p>Books</p>
+                    <ul>
+                        <li><a href="harry_potter.html">Harry Potter</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                    </ul>
+                </li>
+                <li><p>Comics & Manga</p>
+                    <ul>
+                        <li><a href="tintin.html">Tintin</a></li>
+                        <li><a href="no_game_no_life.html">No Game No Life</a></li>
+                        <li><a href="amulet.html">Amulet</a></li>
+                    </ul>
+                </li>
+                <li><p>Movies</p>
+                    <ul>
+                        <li><a href="the_mask.html">The Mask</a></li>
+                        <li><a href="the_green_mile.html">The Green Mile</a></li>
+                        <li><a href="ronin.html">Ronin</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Legal</a>
+                    <ul>
+                        <li><a href="bibliography.html">Bibliography</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us!</a></li>
+            </ul>
+        </nav>
+        <header>
+            
+        </header>
+        <main>
+        </main>
+            <ul>
+                <li>
+                    <button onclick="change_plot(this.id)" id="one">Click me to hide text</button>
+                    <button onclick="change_plot(this.id)" id="two">Click me to change text</button>
+                    <button onclick="change_plot(this.id)" id="three">Click</button>
+                </li>
+            </ul>
+            <div id="plot">     
+                <ul>
+                    <li>
+                        <h3 id="plot_header">Header</h3>
+                    </li>
+
+                    <li>
+                        <p id="plot_text">Banana</p>
+                    </li>
+                </ul>
+            </div>
+            
+        <footer>
+
+        </footer>
+    </body>
+</html>

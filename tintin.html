@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="James Sadler">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
+        <script src="Scripts/DarkMode.js"></script>
+        <script src="Scripts/Slideshows.js" defer></script>
+        <script src="Scripts/Rating.js" defer></script>
+        <script src="Scripts/PlotSwitch.js" defer></script>
+        <title>Tintin | Sami's Suggestions</title>
+    </head>
+    <body style="background-color: white;">
+        <nav>
+            <ul>
+                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/Moon-clipart-outline-free-images.png" onclick="dark_mode()" title="Dark mode"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><p>Books</p>
+                    <ul>
+                        <li><a href="harry_potter.html">Harry Potter</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                    </ul>
+                </li>
+                <li><p>Comics & Manga</p>
+                    <ul>
+                        <li><a class="active" href="tintin.html">Tintin</a></li>
+                        <li><a href="no_game_no_life.html">No Game No Life</a></li>
+                        <li><a href="amulet.html">Amulet</a></li>
+                    </ul>
+                </li>
+                <li><p>Movies</p>
+                    <ul>
+                        <li><a href="the_mask.html">The Mask</a></li>
+                        <li><a href="the_green_mile.html">The Green Mile</a></li>
+                        <li><a href="ronin.html">Ronin</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Legal</a>
+                    <ul>
+                        <li><a href="bibliography.html">Bibliography</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us!</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Tintin</h1>
+        </header>
+        <main>
+            <div id="info">
+                <table style="float: right;">
+                    <tr>
+                        <th><img id="slideshowimg" src="Images/Slideshows/Tintin/tintin1.jpg" width="400" height="600"></th>
+                    </tr>
+                    <tr>
+                        <td>[TITLE GOES HERE]</td>
+                    </tr>
+                    <tr>
+                        <td>[RELEASE YEAR GOES HERE]</tr>
+                    </tr>
+                    <tr>
+                        <td>[VOLUMES GO HERE]</td>
+                    </tr>
+                    <tr>
+                        <td>[RATINGS GO HERE]<br>[RATING 2]</td>
+                    </tr>
+                    <tr>
+                        <td>[MOVIE/ANIME GOES HERE]</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <img src="Images/vote_up.png" style="border: 1px solid black" width="50", height="50;" id="up" title="I like this" onclick="like()">
+                                <div style="display: flex;">
+                                    <p id="likeNum">0</p>
+                                    <p>/</p>
+                                    <p id="dislikeNum">0</p>
+                                </div>
+                                <img src="Images/vote_down.png" style="border: 1px solid black" width="50", height="50;" id="down" title="I Dislike this" onclick="dislike()">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h1>Plot</h1>
+            <div id="plotelements">
+                <label>Select a book to get more information on: </label>
+                <select id="selector" onchange="changebook()"></select>
+                <div>
+                    <h4 id="title"></h4>
+                    <div style="display: flex;">
+                        <img id="cover" height="300px", width="200px">
+                        <p id="description"></p>
+                    </div>
+                </div>
+            </div>
+            <h1>Authors</h1>
+            <p>Authors go here</p>
+            <h1>My Thoughts</h1>
+            <p>My thoughts on this book</p>
+            <h1>Comments</h1>
+        </main>
+        <script>
+            window.onload = function() {
+                slideshow_tintin();
+            }
+        </script>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>

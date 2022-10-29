@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="James Sadler">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
+        <script src="Scripts/DarkMode.js" defer></script>
+        <script src="Scripts/Slideshows.js" defer></script>
+        <script src="Scripts/Rating.js" defer></script>
+        <!--<script src="Scripts/PlotSwitch.js" defer></script>-->
+        <script src="Scripts/Comments.js" defer></script>
+        <title>Brotherband | Sami's Suggestions</title>
+    </head>
+    <body style="background-color: white;">
+        <nav>
+            <ul>
+                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/moon.png" onclick="dark_mode()" title="Dark mode"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><p class="ignore">Books</p>
+                    <ul>
+                        <li><a href="harry_potter.html">Harry Potter</a></li>
+                        <li><a class="active" href="brotherband.html">Brotherband</a></li>
+                        <li><a href="rangers_apprentice.html">Ranger's Apprentice</a></li>
+                    </ul>
+                </li>
+                <li><p class="ignore">Comics & Manga</p>
+                    <ul>
+                        <li><a href="tintin.html">Tintin</a></li>
+                        <li><a href="no_game_no_life.html">No Game No Life</a></li>
+                        <li><a href="amulet.html">Amulet</a></li>
+                    </ul>
+                </li>
+                <li><p class="ignore">Movies</p>
+                    <ul>
+                        <li><a href="the_mask.html">The Mask</a></li>
+                        <li><a href="the_green_mile.html">The Green Mile</a></li>
+                        <li><a href="ronin.html">Ronin</a></li>
+                    </ul>
+                </li>
+                <li><p class="ignore">Legal</a>
+                    <ul>
+                        <li><a href="bibliography.html">Bibliography</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us!</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1><p>Brotherband</p></h1>
+        </header>
+        <main>
+            <div id="info">
+                <table id="info-table" style="float: right;">
+                    <tr>
+                        <th><img id="slideshowimg" src="Images/Slideshows/Brotherband/Brotherband1.png" width="400" height="600"></th>
+                    </tr>
+                    <tr>
+                        <td><p>Release Year: 2011 - Present Year</p></tr>
+                    </tr>
+                    <tr>
+                        <td><p>Volumes: 9</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>There is no known movie series or adaptation for this series</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <img src="Images/vote_up.png" style="border: 1px solid black" width="50", height="50;" id="up" title="I like this" onclick="like()">
+                                <div style="display: flex;">
+                                    <p id="likeNum">0</p>
+                                    <p>/</p>
+                                    <p id="dislikeNum">0</p>
+                                </div>
+                                <img src="Images/vote_down.png" style="border: 1px solid black" width="50", height="50;" id="down" title="I Dislike this" onclick="dislike()">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h1><p>Plot</p></h1>
+            <p>In Skandia, there is only one way to become a warrior. Boys are chosen for teams called brotherbands and must endure three months of gruelling training in seamanship, weapons and battle tactics. It's brotherband against brotherband, fighting it out in a series of challenges.</p>
+            <h1><p>Authors</p></h1>
+            <p>John Flanagan</p>
+            <h1><p>My Thoughts</p></h1>
+            <p>I Grew up reading these books, They are very good reads, if you can find them, I'd highly recommend reading them</p>
+            <h1><p>Comments</p></h1>
+            <h2><p>Add a Comment</p></h2>
+            <form>
+                <label for="name">Your name</label>
+                <input type="text" id="comment_name" name="name">
+                <br>
+                <label for="comment">Your comment</label>
+                <br>
+                <textarea id="comment_text" cols="40" rows="3"></textarea>
+                <br>
+                <button type="button" onclick="add_comment()">Submit comment</button>
+            </form>
+            <h2><p>Other's Comments</p></h2>
+            <div id="comment-section">
+            </div>
+        </main>
+        <script>
+            window.onload = function() {
+                for (var i = 0; i < 9; i++) {
+                    slideshow_images.push("Images/Slideshows/Brotherband/Brotherband" + (i + 1) + ".png")
+                }
+                slideshow();
+            }
+        </script>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>

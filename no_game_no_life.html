@@ -6,37 +6,40 @@
         <meta name="author" content="James Sadler">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
-        <script src="Scripts/DarkMode.js"></script>
+        <script src="Scripts/DarkMode.js" defer></script>
         <script src="Scripts/Slideshows.js" defer></script>
-        <title>Web Interactivity Tutorials</title>
+        <script src="Scripts/Rating.js" defer></script>
+        <!--<script src="Scripts/PlotSwitch.js" defer></script>-->
+        <script src="Scripts/Comments.js" defer></script>
+        <title>No Game No Life | Sami's Suggestions</title>
     </head>
     <body style="background-color: white;">
         <nav>
             <ul>
-                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/Moon-clipart-outline-free-images.png" onclick="dark_mode()" title="Dark mode"></li>
+                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/moon.png" onclick="dark_mode()" title="Dark mode"></li>
                 <li><a href="index.html">Home</a></li>
-                <li><p>Books</p>
+                <li><p class="ignore">Books</p>
                     <ul>
                         <li><a href="harry_potter.html">Harry Potter</a></li>
-                        <li><a href="#">Sub 2</a></li>
-                        <li><a href="#">Sub 3</a></li>
+                        <li><a href="brotherband.html">Brotherband</a></li>
+                        <li><a href="rangers_apprentice.html">Ranger's Apprentice</a></li>
                     </ul>
                 </li>
-                <li><p>Comics & Manga</p>
+                <li><p class="ignore">Comics & Manga</p>
                     <ul>
                         <li><a href="tintin.html">Tintin</a></li>
                         <li><a class="active" href="no_game_no_life.html">No Game No Life</a></li>
                         <li><a href="amulet.html">Amulet</a></li>
                     </ul>
                 </li>
-                <li><p>Movies</p>
+                <li><p class="ignore">Movies</p>
                     <ul>
                         <li><a href="the_mask.html">The Mask</a></li>
                         <li><a href="the_green_mile.html">The Green Mile</a></li>
                         <li><a href="ronin.html">Ronin</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Legal</a>
+                <li><p class="ignore">Legal</p>
                     <ul>
                         <li><a href="bibliography.html">Bibliography</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -46,44 +49,77 @@
             </ul>
         </nav>
         <header>
-            <h1>Tintin</h1>
+            <h1><p>No Game No Life</p></h1>
         </header>
         <main>
             <div id="info">
-                <table style="float: right;">
+                <table id="info-table" style="float: right;">
                     <tr>
-                        <th><img id="slideshowimg" src="Images/Slideshows/Tintin/tintin1.jpg" width="400" height="600"></th>
+                        <th><img id="slideshowimg" src="Images/Slideshows/NoGameNoLife/NoGameNoLife1.png" width="400" height="600"></th>
                     </tr>
                     <tr>
-                        <td>[TITLE GOES HERE]</td>
+                        <td><p>Release Year: 2012 - Present Year</p></tr>
                     </tr>
                     <tr>
-                        <td>[RELEASE YEAR GOES HERE]</tr>
+                        <td><p>Volumes: 12</p></td>
                     </tr>
                     <tr>
-                        <td>[VOLUMES GO HERE]</td>
-                    </tr>
-                    <tr>
-                        <td>[RATINGS GO HERE]<br>[RATING 2]</td>
-                    </tr>
-                    <tr>
-                        <td>[MOVIE/ANIME GOES HERE]</td>
+                        <td><p>There is an anime based on this manga</p></td>
                     </tr>
                     <tr>
                         <td>
-                            <div style="display: flex; justify-content: space-between; align-items: center; ">
-                                <img src="Images/vote_up.png" style="border: 1px solid black" width="50", height="50;">
-                                <p>[USER RATINGS HERE]</p>
-                                <img src="Images/vote_down.png" style="border: 1px solid black" width="50", height="50;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <img src="Images/vote_up.png" style="border: 1px solid black" width="50", height="50;" id="up" title="I like this" onclick="like()">
+                                <div style="display: flex;">
+                                    <p id="likeNum">0</p>
+                                    <p>/</p>
+                                    <p id="dislikeNum">0</p>
+                                </div>
+                                <img src="Images/vote_down.png" style="border: 1px solid black" width="50", height="50;" id="down" title="I Dislike this" onclick="dislike()">
                             </div>
                         </td>
                     </tr>
                 </table>
+                <h1><p>Plot</p></h1>
+                <p>Siblings Sora and Shiro together make up the most feared team of pro gamers in the world, The Blank. When they manage to beat god himself in a game of chess, they are sent to a world where all disputes are settled with games.</p>
+                <!--<div id="plotelements">
+                    <label>Select a book to get more information on: </label>
+                    <select id="selector" onchange="changebook()"></select>
+                    <div>
+                        <h4 id="title"></h4>
+                        <div style="display: flex;">
+                            <img id="cover" height="300px", width="200px">
+                            <p id="description"></p>
+                        </div>
+                    </div>
+                </div>-->
+                <h1><p>Authors</p></h1>
+                <p>Yū Kamiya</p>
+                <h1><p>My Thoughts</p></h1>
+                <p>I Grew up reading these books, They are very good reads, if you can find them, I'd highly recommend reading them</p>
+                <h1><p>Comments</p></h1>
+                <h2><p>Add a Comment</p></h2>
+                <form>
+                    <label for="name">Your name</label>
+                    <input type="text" id="comment_name" name="name">
+                    <br>
+                    <label for="comment">Your comment</label>
+                    <br>
+                    <textarea id="comment_text" cols="40" rows="3"></textarea>
+                    <br>
+                    <button type="button" onclick="add_comment()">Submit comment</button>
+                </form>
+                <h2><p>Other's Comments</p></h2>
+                <div id="comment-section">
+                </div>
             </div>
         </main>
         <script>
             window.onload = function() {
-                slideshow_tintin();
+                for (var i = 0; i < 12; i++) {
+                    slideshow_images.push("Images/Slideshows/NoGameNoLife/NoGameNoLife" + (i + 1) + ".png")
+                }
+                slideshow();
             }
         </script>
 

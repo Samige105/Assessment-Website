@@ -19,11 +19,11 @@ function like() {
         if (votestatus.dislike == true) {
             dislikeNum.innerHTML = ratings.dislike
             votestatus.dislike = false
-            downvote.style.backgroundColor = 'white'
+            downvote.style.backgroundColor = "transparent"
         }
     } else {
         likeNum.innerHTML = ratings.like
-        upvote.style.backgroundColor = 'white'
+        upvote.style.backgroundColor = 'transparent'
         votestatus.like = false
     }
 }
@@ -37,11 +37,11 @@ function dislike() {
         if (votestatus.like == true) {
             likeNum.innerHTML = ratings.like
             votestatus.like = false
-            upvote.style.backgroundColor = 'white'
+            upvote.style.backgroundColor = 'transparent'
         }
     } else {
         dislikeNum.innerHTML = ratings.dislike
-        downvote.style.backgroundColor = 'white'
+        downvote.style.backgroundColor = 'transparent'
         votestatus.dislike = false
     }
 }

@@ -6,39 +6,40 @@
         <meta name="author" content="James Sadler">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
-        <script src="Scripts/DarkMode.js"></script>
+        <script src="Scripts/DarkMode.js" defer></script>
         <script src="Scripts/Slideshows.js" defer></script>
         <script src="Scripts/Rating.js" defer></script>
-        <script src="Scripts/PlotSwitch.js" defer></script>
+        <!--<script src="Scripts/PlotSwitch.js" defer></script>-->
+        <script src="Scripts/Comments.js" defer></script>
         <title>Tintin | Sami's Suggestions</title>
     </head>
     <body style="background-color: white;">
         <nav>
             <ul>
-                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/Moon-clipart-outline-free-images.png" onclick="dark_mode()" title="Dark mode"></li>
+                <li style="float: right"><img id="switcher" width="49px", height="49px" src="Images/moon.png" onclick="dark_mode()" title="Dark mode"></li>
                 <li><a href="index.html">Home</a></li>
-                <li><p>Books</p>
+                <li><p class="ignore">Books</p>
                     <ul>
                         <li><a href="harry_potter.html">Harry Potter</a></li>
-                        <li><a href="#">Sub 2</a></li>
-                        <li><a href="#">Sub 3</a></li>
+                        <li><a href="rangers_apprentice.html">Ranger's Apprentice</a></li>
+                        <li><a href="brotherband.html">Brotherband</a></li>
                     </ul>
                 </li>
-                <li><p>Comics & Manga</p>
+                <li><p class="ignore">Comics & Manga</p>
                     <ul>
                         <li><a class="active" href="tintin.html">Tintin</a></li>
                         <li><a href="no_game_no_life.html">No Game No Life</a></li>
                         <li><a href="amulet.html">Amulet</a></li>
                     </ul>
                 </li>
-                <li><p>Movies</p>
+                <li><p class="ignore">Movies</p>
                     <ul>
                         <li><a href="the_mask.html">The Mask</a></li>
                         <li><a href="the_green_mile.html">The Green Mile</a></li>
                         <li><a href="ronin.html">Ronin</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Legal</a>
+                <li><p class="ignore">Legal</a>
                     <ul>
                         <li><a href="bibliography.html">Bibliography</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -48,28 +49,22 @@
             </ul>
         </nav>
         <header>
-            <h1>Tintin</h1>
+            <h1><p>Tintin</p></h1>
         </header>
         <main>
             <div id="info">
-                <table style="float: right;">
+                <table id="info-table">
                     <tr>
                         <th><img id="slideshowimg" src="Images/Slideshows/Tintin/tintin1.jpg" width="400" height="600"></th>
                     </tr>
                     <tr>
-                        <td>[TITLE GOES HERE]</td>
+                        <td><p>Release: 1929 - 1976</p></tr>
                     </tr>
                     <tr>
-                        <td>[RELEASE YEAR GOES HERE]</tr>
+                        <td><p>Volumes: 24</p></td>
                     </tr>
                     <tr>
-                        <td>[VOLUMES GO HERE]</td>
-                    </tr>
-                    <tr>
-                        <td>[RATINGS GO HERE]<br>[RATING 2]</td>
-                    </tr>
-                    <tr>
-                        <td>[MOVIE/ANIME GOES HERE]</td>
+                        <td><p>Several Adaptations have been made of this series</p></td>
                     </tr>
                     <tr>
                         <td>
@@ -86,8 +81,9 @@
                     </tr>
                 </table>
             </div>
-            <h1>Plot</h1>
-            <div id="plotelements">
+            <h1><p>Plot</p></h1>
+            <p>Tintin is a young Belgian reporter and adventurer who becomes involved in dangerous cases in which he takes heroic action to save the day. The Adventures may feature Tintin hard at work in his investigative journalism, but seldom is he seen actually turning in a story.</p>
+            <!--<div id="plotelements">
                 <label>Select a book to get more information on: </label>
                 <select id="selector" onchange="changebook()"></select>
                 <div>
@@ -97,17 +93,72 @@
                         <p id="description"></p>
                     </div>
                 </div>
+            </div>-->
+            <h1><p>Authors</p></h1>
+            <p>Georges Prosper Remi aka Hergé</p>
+            <h1><p>My Thoughts</p></h1>
+            <p>I Grew up reading these books, They are very good reads, if you can find them, I'd highly recommend reading them</p>
+            <h1><p>Comments</p></h1>
+            <h2><p>Add a Comment</p></h2>
+            <form>
+                <label for="name">Your name</label>
+                <input type="text" id="comment_name" name="name">
+                <br>
+                <label for="comment">Your comment</label>
+                <br>
+                <textarea id="comment_text" cols="40" rows="3"></textarea>
+                <br>
+                <button type="button" onclick="add_comment()">Submit comment</button>
+            </form>
+            <h2><p>Other's Comments</p></h2>
+            <div id="comment-section">
             </div>
-            <h1>Authors</h1>
-            <p>Authors go here</p>
-            <h1>My Thoughts</h1>
-            <p>My thoughts on this book</p>
-            <h1>Comments</h1>
         </main>
         <script>
             window.onload = function() {
-                slideshow_tintin();
+                for (var i = 0; i < 24; i++) {
+                    slideshow_images.push("Images/Slideshows/Tintin/tintin" + (i + 1) + ".jpg")
+                }
+                slideshow();
             }
+                /*
+                This big section of comment is things i planned but never got around to doing
+                booknames.push("Land Of The Soviets", 
+                            "Tintin in the Congo", 
+                            "Tintin in America", 
+                            "Cigars of the Pharaoh", 
+                            "The Blue Lotus", 
+                            "The Broken Ear", 
+                            "The Black Island", 
+                            "King Ottokar's Scepter", 
+                            "The Crab With The Golden Claws", 
+                            "The Shooting Star", 
+                            "Secret Of The Unicorn", 
+                            "Red Rackham's Treasure", 
+                            "The Seven Crystal Balls", 
+                            "Prisoners of the sun", 
+                            "Land of Black Gold", 
+                            "Destination Moon", 
+                            "Explorers on the moon", 
+                            "The Calculus Affair", 
+                            "The Red Sea Sharks", 
+                            "Tintin in Tibet", 
+                            "The Castofiore Emerald", 
+                            "Flight 714 To Sydney", 
+                            "Tintin and the Picaros", 
+                            "Alph-Art"
+                )
+
+                plot.push(
+                    "The story tells of young Belgian reporter Tintin and his dog Snowy, who are sent to the Soviet Union to report on the policies of Joseph Stalin's Bolshevik government. Tintin's intent to expose the regime's secrets prompts agents from the Soviet secret police, the OGPU, to hunt him down with the intent to kill.",
+                    ""
+                    )
+                for (var i = 0; i < booknames.length; i++) {
+                        books.push({id: i, title: booknames[i], image_url: "Images/Slideshows/Tintin/tintin" + (i + 1) + ".jpg", description: plot[0]})
+                    }
+                createPlotswitch()
+            }
+        */
         </script>
 
         <footer>
